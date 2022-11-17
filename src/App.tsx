@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react';
+import { ThemeProvider } from 'styled-components';
+import Cards from './components/layout/Cards';
+import Footer from './components/layout/Footer';
+import ThemeSwitcher from './components/layout/ThemeSwitcher';
+import SearchBar from './components/SearchBar';
+import { ThemeContext } from './context/ThemeContext';
+import { AppContainer, PageContainer } from './styles/components.styled';
+import { FlexRow } from './styles/layout.styled';
 
 function App() {
+  const themeContext = useContext(ThemeContext)
+  const { activeTheme, isDark } = themeContext
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={activeTheme}>
+      <PageContainer>
+        <AppContainer darkMode={isDark}>
+          <div>
+            <h1>Search for the books you need</h1>
+          </div>
+          <div>
+            <ThemeSwitcher />
+            <br />
+            <br />
+          </div>
+          <SearchBar />
+          <FlexRow gap="2">
+            <br />
+            <br />
+            <Cards />
+          </FlexRow>
+          <Footer />
+        </AppContainer>
+      </PageContainer>
+    </ThemeProvider>
   );
 }
 
