@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FlexRowProps } from "../types/layout";
-import { metrics } from "../utils/constant.utils";
+import { appTheme, colors, metrics } from "../utils/constant.utils";
 
 export const FlexRow = styled.div<FlexRowProps>`
     display: flex;
@@ -21,10 +21,25 @@ export const Title = styled.h2`
 export const FooterSC = styled.div`
     text-align: center;
     margin-top: 1rem;
+    // position: fixed; 
+    // padding: rem 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
 
     .le_creatau {
         background: #fff;
         padding: .2rem .4rem;
         border-radius: 5px;
     }
+`
+
+export const NavbarSC = styled.nav`
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+`
+
+export const LogoTitleSC = styled.h1`
+    font-size: 1.5rem;
 `

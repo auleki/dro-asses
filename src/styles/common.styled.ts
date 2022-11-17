@@ -60,7 +60,7 @@ export const CardsSC = styled.ul`
     list-type: none;
     // height: 80vh;
     gap: 1rem;
-    outline: 2px solid crimson;
+    // outline: 2px solid crimson;
     justify-content: space-between;
     row-gap: 3rem;
 `

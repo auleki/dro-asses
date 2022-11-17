@@ -1,17 +1,18 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../../context/ThemeContext'
+import { ThemeSwitchButton } from '../../styles/components.styled'
 
 
 const ThemeSwitcher = () => {
     const { toggleTheme, isDark } = useContext(ThemeContext)
 
     return (
-        <span onClick={toggleTheme}>
+        <ThemeSwitchButton onClick={toggleTheme}>
             {isDark
-                ? <span aria-label="Light mode" role="img">🌞 Bring Light</span>
-                : <span aria-label="Dark mode" role="img">🌜 Bring Dark</span>
+                ? <span aria-label="Light mode" role="img">🌞 Change to Light</span>
+                : <span aria-label="Dark mode" role="img">🌜 Change to Dark</span>
             }
-        </span>
+        </ThemeSwitchButton>
     )
 }
 

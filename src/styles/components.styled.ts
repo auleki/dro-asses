@@ -10,16 +10,14 @@ export const PageContainer = styled.main`
 `
 
 export const FullPageContainer = styled.div`
-    height: 80vh;
+    height: 40vh;
     display: flex;
     text-align: center;
     margin: 0 auto;
     width: 100%;
-    outline: 2px crimson red;
     align-items: center;
     justify-content: center;
 `
-
 
 export const AppContainer = styled.div<AppContainerProps>`
     font-family: ${fonts.paragraph};
@@ -31,8 +29,9 @@ export const SearchBarSC = styled(motion.form)`
     display: inline-flex;
     background-color: ${(props) => props.theme.cardBg};
     padding: 1rem;
-    margin: 2rem 0;
+    margin: 2rem auto;
     gap: .5rem;
+    align-items: center;
     box-shadow: 4px 4px 30px 10px rgba(0, 0, 0, 0.2);
     border-radius: ${metrics.borderRadius};
 `
@@ -56,4 +55,19 @@ export const SelectInputSC = styled.select`
     outline: none;
     border: none;
     width: 150px;
+`
+
+export const ThemeSwitchButton = styled.span`
+    cursor: pointer;
+    &:hover {
+        opacity: .4;
+    }
+`
+
+export const SearchSectionSC = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem 0 4rem;
+    text-align: center;
 `

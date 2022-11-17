@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Cards from './components/layout/Cards';
 import Footer from './components/layout/Footer';
+import Navbar from './components/layout/Navbar';
 import ThemeSwitcher from './components/layout/ThemeSwitcher';
 import SearchBar from './components/SearchBar';
+import SearchSection from './components/SearchSection';
 import { ThemeContext } from './context/ThemeContext';
 import { AppContainer, PageContainer } from './styles/components.styled';
 import { FlexRow } from './styles/layout.styled';
@@ -16,14 +18,9 @@ function App() {
     <ThemeProvider theme={activeTheme}>
       <PageContainer>
         <AppContainer darkMode={isDark}>
-          <div>
-            <h1>Search for the books you need</h1>
-          </div>
-          <div>
-            <ThemeSwitcher />
-          </div>
-          <SearchBar />
-          <FlexRow gap="2">
+          <Navbar />
+          <SearchSection />
+          <FlexRow>
             <Cards />
           </FlexRow>
           <Footer />
