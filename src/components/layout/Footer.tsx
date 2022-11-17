@@ -1,8 +1,9 @@
 import React from 'react'
+import { FooterSC } from '../../styles/layout.styled'
 
 const Footer = () => {
     return (
-        <div>Created by Emmanuel Giwa</div>
+        <FooterSC>Created with ❤️ by <span className='le_creatau'>Emmanuel Giwa</span></FooterSC>
     )
 }
 

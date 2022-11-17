@@ -15,4 +15,16 @@ export const FlexCol = styled(FlexRow)`
 
 export const Title = styled.h2`
     font-size: ${metrics.fontBig};
+    margin: 2rem 0;
+`
+
+export const FooterSC = styled.div`
+    text-align: center;
+    margin-top: 1rem;
+
+    .le_creatau {
+        background: #fff;
+        padding: .2rem .4rem;
+        border-radius: 5px;
+    }
 `

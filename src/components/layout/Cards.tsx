@@ -5,21 +5,25 @@ import { CardsSC } from '../../styles/common.styled'
 import Card from '../common/card/Card'
 import InfiniteScroll from 'react-infinite-scroller'
 import { fetchBooks } from '../../services/book'
+import { FullPageContainer } from '../../styles/components.styled'
 
 const Cards = () => {
     const { setAllBooks, allBooks } = useContext(GlobalContext)
     const [currentPage, setCurrentPage] = useState(1)
+    const [isLoading, setIsLoading] = useState(false)
+    const [isEmpty, setIsEmpty] = useState(false)
 
     // const { data, loading, errors } = useFetch("/books")
 
     async function loadsBooks() {
-        let notDoneFetching = true
+        // let notDoneFetching = true
         let lastResult = []
         let newBooks: any[] = []
         let pageNumber = 1
         let limit = 0
 
         do {
+            setIsLoading(true)
             try {
                 lastResult = await fetchBooks(currentPage)
                 console.log('Latest Result', lastResult)
@@ -37,9 +41,12 @@ const Cards = () => {
                 console.log('newBooks - final', newBooks)
                 lastResult = []
                 setAllBooks(newBooks)
+                setIsLoading(false)
             } catch (error) {
+                setIsLoading(false)
                 console.log('error', error)
             } finally {
+                setIsLoading(false)
                 limit++
             }
         } while (limit < 3);
@@ -57,10 +64,14 @@ const Cards = () => {
         // loader={ }
         >
             <CardsSC>
-                {allBooks?.length === 0 ? (
-                    <div>
+                {allBooks?.length === 0 && !isLoading ? (
+                    <FullPageContainer>
+                        <h2>No Books Found</h2>
+                    </FullPageContainer>
+                ) : isLoading || isEmpty ? (
+                    <FullPageContainer>
                         <h2>loading books...</h2>
-                    </div>
+                    </FullPageContainer>
                 ) : (allBooks?.map(book => <Card book={book} key={book?.name} />))}
             </CardsSC>
         </InfiniteScroll>

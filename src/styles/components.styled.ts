@@ -9,6 +9,18 @@ export const PageContainer = styled.main`
     min-height: 100vh;
 `
 
+export const FullPageContainer = styled.div`
+    height: 80vh;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    outline: 2px crimson red;
+    align-items: center;
+    justify-content: center;
+`
+
+
 export const AppContainer = styled.div<AppContainerProps>`
     font-family: ${fonts.paragraph};
     padding: 2rem;
@@ -19,6 +31,7 @@ export const SearchBarSC = styled(motion.form)`
     display: inline-flex;
     background-color: ${(props) => props.theme.cardBg};
     padding: 1rem;
+    margin: 2rem 0;
     gap: .5rem;
     box-shadow: 4px 4px 30px 10px rgba(0, 0, 0, 0.2);
     border-radius: ${metrics.borderRadius};

@@ -35,8 +35,9 @@ export const CardSC = styled.div`
 
 export const AuthorSC = styled.section`
     background-color: ${(props) => props.theme.authorTagBg};
-    padding: .5rem 1rem;
+    padding: .3rem 1rem;
     display: inline-flex; 
+    font-size: .8rem;
     border-radius: 50px;
     color: ${(props) => props.theme.authorTagText};
 `
@@ -44,6 +45,7 @@ export const AuthorSC = styled.section`
 export const AuthorsSection = styled.div`
     display: flex;
     flex-direction: column;
+    margin: 1rem 0;
     .authors {
         display: flex; 
         gap: .5rem;
@@ -56,7 +58,9 @@ export const CardsSC = styled.ul`
     display: flex;
     flex-wrap: wrap;
     list-type: none;
+    // height: 80vh;
     gap: 1rem;
+    outline: 2px solid crimson;
     justify-content: space-between;
     row-gap: 3rem;
 `

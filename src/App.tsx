@@ -21,13 +21,9 @@ function App() {
           </div>
           <div>
             <ThemeSwitcher />
-            <br />
-            <br />
           </div>
           <SearchBar />
           <FlexRow gap="2">
-            <br />
-            <br />
             <Cards />
           </FlexRow>
           <Footer />
