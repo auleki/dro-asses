@@ -9,11 +9,11 @@ export const placeholderText = {
 }
 
 export const SEARCH_METHODS = {
-    name: "NAME",
-    author: "AUTHOR",
-    date: "DATE",
-    charactersName: "CHARACTERS_NAME",
-    charactersCulture: "CHARACTERS_CULTURE"
+    name: "name",
+    author: "author",
+    date: "date",
+    charactersName: "charactersName",
+    charactersCulture: "charactersCulture"
 }
 
 export const SEARCH_CONTEXT = {

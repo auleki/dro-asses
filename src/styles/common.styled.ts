@@ -1,5 +1,10 @@
 import styled from 'styled-components'
-import { metrics } from '../utils/constant.utils'
+import { SpanProps } from '../types/styled'
+import { colors, metrics } from '../utils/constant.utils'
+
+export const Span = styled.span<SpanProps>`
+    color: ${props => props.color || 'inherit'};
+`
 
 export const ButtonSC = styled.button`
     padding: .7rem 2rem;
@@ -19,18 +24,21 @@ export const ButtonSC = styled.button`
 
 export const CardSC = styled.div`
     background-color: ${(props) => props.theme.cardBg};
+    outline: 2px solid transparent;
     display: inline-flex;
     flex-direction: column;
     border-radius: ${metrics.borderRadius};
     width: 400px;
-    // background: rgba(255, 255, 255, 0.28);
     border-radius: 16px;
-    // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(16.6px);
     -webkit-backdrop-filter: blur(8.6px);
     padding: 1rem; 
+    transition: outline 100ms ease-out;
     color: ${(props) => props.theme.cardText};
-    // box-shadow: 4px 4px 30px 10px ${(props) => props.theme.shadow};
+
+    &:hover {
+        outline-color: ${colors.primary.yellow};
+    }
 `
 
 export const AuthorSC = styled.section`
@@ -56,11 +64,11 @@ export const AuthorsSection = styled.div`
 export const CardsSC = styled.ul`
     overflow-y: auto;
     display: flex;
+    width: 100%;
+    // outline: 2px solid crimson;
     flex-wrap: wrap;
     list-type: none;
-    // height: 80vh;
     gap: 1rem;
-    // outline: 2px solid crimson;
     justify-content: space-between;
     row-gap: 3rem;
 `

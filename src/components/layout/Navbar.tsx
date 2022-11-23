@@ -5,7 +5,7 @@ import ThemeSwitcher from './ThemeSwitcher'
 const Navbar = () => {
     return (
         <NavbarSC>
-            <LogoTitleSC>DRO Health</LogoTitleSC>
+            <LogoTitleSC>DRO HEALTH</LogoTitleSC>
             <ThemeSwitcher />
         </NavbarSC>
     )

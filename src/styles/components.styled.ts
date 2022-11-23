@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import {motion} from 'framer-motion'
-import { fonts, metrics, colors } from "../utils/constant.utils";
+import { fonts, metrics } from "../utils/constant.utils";
 import { AppContainerProps } from "../types/layout";
+import { CardSC } from "./common.styled";
 
 export const PageContainer = styled.main`
     background: ${(props) => props.theme.bgGradient};
@@ -9,9 +10,36 @@ export const PageContainer = styled.main`
     min-height: 100vh;
 `
 
-export const FullPageContainer = styled.div`
-    height: 40vh;
+export const ContainerSC = styled.section`
+    width: 100%;
+    gap: 1rem;
     display: flex;
+    flex-wrap: wrap;
+`
+
+
+export const CardsContainer = styled(CardSC)`
+    width: 100%;
+    // outline: 2px solid crimson;
+    gap: 1rem;
+    row-gap: 3rem;
+    display: grid;
+    background: transparent;
+    grid-template-columns: repeat(1, 6fr);
+    place-items: center;
+
+    @media (min-width: 920px) {
+        grid-template-columns: repeat(2, 6fr);
+    }
+
+    @media (min-width: 1328px) {
+        grid-template-columns: repeat(3, 4fr);
+    }
+`
+
+export const FullPageContainer = styled.div`
+    height: 50vh;
+    display: inline-flex;
     text-align: center;
     margin: 0 auto;
     width: 100%;
@@ -51,7 +79,7 @@ export const SelectInputSC = styled.select`
     padding: .6rem .6rem .8rem .6rem;
     background: transparent;
     font-family: inherit;
-    color: ${colors.primary.black};
+    color: ${props => props.theme.cardText};
     outline: none;
     border: none;
     width: 150px;
@@ -59,6 +87,7 @@ export const SelectInputSC = styled.select`
 
 export const ThemeSwitchButton = styled.span`
     cursor: pointer;
+    color: ${(props) => props.theme.searchBarText};
     &:hover {
         opacity: .4;
     }
@@ -69,5 +98,6 @@ export const SearchSectionSC = styled.div`
     flex-direction: column;
     justify-content: center;
     margin: 2rem 0 4rem;
+    height: 40vh;
     text-align: center;
 `

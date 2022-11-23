@@ -8,7 +8,7 @@ const Authors = ({ authors }: AuthorsProps) => {
         <AuthorsSection>
             <h4>Authors</h4>
             <div className='authors'>
-                {authors.map((author, idx) => <Author key={idx} author={author} />)}
+                {authors?.map((author, idx) => <Author key={idx} author={author} />)}
             </div>
         </AuthorsSection>
     )

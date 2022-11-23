@@ -13,13 +13,12 @@ export const colors = {
     },
     glass: {
         // add glassmorphic background colors
-        green200: "rgba(10, 67, 52, 0.28)",
+        green200: "rgba(0, 0, 0, 0.28)",
         white: "rgba(255, 255, 255, 0.28)"
-        // green200: "red"
     },
     gradients: {
-        greenPurple: "repeating-conic-gradient(from 0deg at 50% 50%, #131616FF 19%, #2B2B2B 66%, #333333FF 77%, #44444CFF 100%)",
-        green: "repeating-conic-gradient(from 0deg at 50% 50%, #EEEEEEFF 23%, #FFFFFFFF 26%, #ADADADFF 77%, #CFCDCDFF 100%)"
+        green: "linear-gradient(to right, #ffffff60, #ffffff90), url('https://res.cloudinary.com/dyj6pqx6d/image/upload/v1668272596/dark_fkhriv.jpg')",
+        greenPurple: "linear-gradient(to bottom, #00000050, #00000090), url('https://res.cloudinary.com/dyj6pqx6d/image/upload/v1668272596/dark_fkhriv.jpg')"
     }
 }
 
@@ -31,7 +30,7 @@ export const appTheme = {
         textColor: colors.primary.yellow,
         buttonBg: colors.primary.green,
         buttonText: colors.primary.white,
-        cardBg: colors.primary.black,
+        cardBg: colors.glass.green200,
         cardText: colors.primary.white,
         cardSubtitle: colors.primary.gray,
         cardIcon: colors.primary.green,

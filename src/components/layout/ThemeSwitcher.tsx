@@ -9,8 +9,8 @@ const ThemeSwitcher = () => {
     return (
         <ThemeSwitchButton onClick={toggleTheme}>
             {isDark
-                ? <span aria-label="Light mode" role="img">🌞 Change to Light</span>
-                : <span aria-label="Dark mode" role="img">🌜 Change to Dark</span>
+                ? <span aria-label="Light mode" role="img">🌞 Light Mode</span>
+                : <span aria-label="Dark mode" role="img">🌜 Dark Mode</span>
             }
         </ThemeSwitchButton>
     )

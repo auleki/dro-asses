@@ -24,4 +24,8 @@ export interface IGlobalContext {
     setSearchText: React.Dispatch<React.SetStateAction<string>>
     allBooks: any[]
     setAllBooks: React.Dispatch<SetStateAction<any[]>>
+    fromDate: string
+    tillDate: string
+    setFromDate: React.Dispatch<React.SetStateAction<string>>
+    setTillDate: React.Dispatch<React.SetStateAction<string>>
 }
